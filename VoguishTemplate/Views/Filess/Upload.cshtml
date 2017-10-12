@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+@using (Html.BeginForm("Upload", "Filess", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="name">File:</label>
+        <input type="file" class="form-control" id="name" name="Image">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default" type="submit">Add File</button>
+    </div>
+}

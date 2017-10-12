@@ -1,0 +1,34 @@
+﻿@model IEnumerable<VoguishTemplate.Models.Menu>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Menus</h2>
+<button class="btn btn-default">@Html.ActionLink("Add Menu", "Create")</button>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Link</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Url</td>
+                <td>@item.Link.Name</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { Id = item.Id })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { Id = item.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

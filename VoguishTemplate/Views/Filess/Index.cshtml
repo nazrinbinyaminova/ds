@@ -1,0 +1,36 @@
+﻿@model IEnumerable<VoguishTemplate.Models.Filess>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Image</h2>
+<button class="btn btn-default">@Html.ActionLink("Add File", "Upload")</button>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Extention</th>
+            <th>Size</th>
+            <th>Path</th>
+            <th>Photo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Extention</td>
+                <td>@item.Size</td>
+                <td>@item.Path</td>
+                <td><img style="width:100px; height:100px" src="~/Uploads/@item.Name"/></td>
+                <td>@Html.ActionLink("Delete", "Delete", new { Id=item.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b70f9e0e05084898a7283b2e21521334" Name="Diagram1">
+        <EntityTypeShape EntityType="VoguishModel.Author" Width="1.5" PointX="0.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoguishModel.Category" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoguishModel.Link" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoguishModel.Menu" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VoguishModel.News" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="VoguishModel.FK_News_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="VoguishModel.FK_News_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="VoguishModel.FK_Menu_Link" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VoguishModel.Filess" Width="1.5" PointX="0.875" PointY="9.75" />
+        <AssociationConnector Association="VoguishModel.FK_News_File1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,33 @@
+﻿@model VoguishTemplate.Models.Link
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Link</h2>
+
+@using (Html.BeginForm("Delete", "Link", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <div class="col-sm-10">
+            <input type="hidden" name="@Model.Id">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="@Model.Name" name="@Model.Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="url">Url:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="url" placeholder="@Model.Url" name="@Model.Url">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Delete</button>
+        </div>
+    </div>
+}

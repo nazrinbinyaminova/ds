@@ -1,0 +1,34 @@
+﻿@model VoguishTemplate.Models.Menu
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Menus", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="Name" placeholder="@Model.Name">
+    </div>
+    <div class="form-group">
+        <label for="url">Url:</label>
+        <input type="text" class="form-control" id="url" name="Url" placeholder="@Model.Url">
+    </div>
+    <div class="form-group">
+        <label for="link">Link:</label>
+        <input type="text" class="form-control" id="link" placeholder="@Model.Link_Id">
+    </div>
+    <div class="form-group">
+        <label for="links">Link Id:</label>
+            <select id="links" class="form-control"  name="Link_Id">
+                @foreach (var item in ViewBag.links)
+                {
+                    <option>@item.Id</option>
+                }
+            </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default" type="submit">Edit</button>
+    </div>
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<VoguishTemplate.Models.News>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>News</h2>
+<button class="btn btn-default">@Html.ActionLink("Add News", "Create")</button>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Text</th>
+            <th>File</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Add Date</th>
+            <th>View Count</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Text</td>
+                <td><img style="width:100px; height:100px" src="~/Uploads/@item.Filess.Name"/></td>
+                <td>@item.Category.Name</td>
+                <td>@item.Add_Date</td>
+                <td>@item.View_Count</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { Id = item.Id })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { Id = item.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
